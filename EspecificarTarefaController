@@ -1,0 +1,26 @@
+public class EspecificarTarefaController{
+
+public List <ListaCategorias> getListaCategorias(){
+
+ia=Pataforma.getListaCategorias();
+}
+
+
+public void novaTarefa(referencia unica, designacao, descricao informal,
+caracter tecnico, duracao de execucao, custo){
+tar=Plataforma.getAreaDeAtividadebyID(area);
+categoria=Plataforma.novaCategoriaTarefa(descricao,ar);
+}
+
+
+public List <CompetenciaTecnica> getListacopetenciastecnica(){
+LCT= Plataforma.getListacopetenciastecnica();
+
+}
+
+public void registaTarefa(tar, catTarefa){
+Plataforma.registaTarefa(tar, catTarefa);
+}
+
+
+}

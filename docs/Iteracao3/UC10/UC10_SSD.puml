@@ -1,0 +1,48 @@
+@startuml
+autonumber
+
+
+actor "Colaborador de Organização" as COLAB
+
+participant ":Sistema" as SIST
+
+activate COLAB
+COLAB -> SIST : inicia o processo de seriação subjetiva (com atribuição opcional ou subjetiva), manualmente, dos candidatos, à realização de uma tarefa \n por si publicada
+activate SIST
+SIST --> COLAB : mostra os anúncios publicados pelo colaborador e solicita a escolha de um
+deactivate SIST
+
+COLAB -> SIST : escolhe um anúncio
+
+loop
+activate SIST
+SIST --> COLAB : mostra as candidaturas existentes e solicita a classificação de uma com justificação para a mesma
+deactivate SIST
+COLAB --> SIST : classifica a candidatura
+activate SIST
+end loop
+
+loop
+SIST --> COLAB : mostra os colaboradores da organização e requer a seleção dos participantes
+deactivate SIST
+COLAB --> SIST : seleciona um colaborador participante
+activate SIST
+end loop
+
+SIST --> COLAB : solicita um texto de	conclusão/resumo	do	processo
+deactivate SIST
+
+COLAB -> SIST : introduz o texto de conclusão
+activate SIST
+SIST --> COLAB : apresenta os dados e solicita confirmação
+deactivate SIST
+
+COLAB -> SIST : confirma
+activate SIST
+SIST --> COLAB : o sucesso do procedimento é informado ao colaborador
+deactivate SIST
+
+
+deactivate COLAB
+
+@enduml
